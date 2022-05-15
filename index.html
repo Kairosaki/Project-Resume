@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.min.css" />
+    <title>Resume</title>
+  </head>
+  <body onload="checkLocalStorage()">
+    <header class="header text-center">
+      <h1 class="header-title pt-lg-4 mb-0"><a href="index.html">Kaaouachi Anas</a></h1>
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navigation"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navigation" class="collapse navbar-collapse flex-column">
+          <div class="profile-section">
+            <label for="profile-image"
+              ><img
+                src="https://via.placeholder.com/200"
+                style="width: 160px; height: 160px;"
+                class="profile-image mb-3 rounded-circle mx-auto"
+                alt="image"
+            /></label>
+            <input type="file" id="profile-image" accept="image/png, image/jpeg" onchange="uploadImage()" />
+            <p class="profile-desc mb-3">
+              Welcome to my personal website, my name is Anas Kaaouachi and I'm a fullstack web developper.
+            </p>
+            <hr />
+          </div>
+
+          <div class="main-navigation">
+            <div class="list-group" id="myList" role="tablist">
+              <a
+                class="list-group-item list-group-item-action active"
+                data-toggle="list"
+                href="#resume"
+                role="tab"
+                id="list-resume-list"
+                onclick="setTitleText($(this));"
+                ><i class="fas fa-file-alt fa-fw animated"></i>Resume</a
+              >
+              <a
+                class="list-group-item list-group-item-action"
+                data-toggle="list"
+                href="#portfolio"
+                role="tab"
+                id="list-portfolio-list"
+                onclick="setTitleText($(this));"
+                ><i class="fas fa-wrench fa-fw animated"></i>Portfolio</a
+              >
+              <a
+                class="list-group-item list-group-item-action"
+                id="list-projects-list"
+                href="#projects"
+                role="tab"
+                data-toggle="list"
+                onclick="setTitleText($(this));"
+                ><i class="fas fa-laptop-code fa-fw animated"></i>Projects</a
+              >
+              <a
+                class="list-group-item list-group-item-action"
+                id="list-contact-list"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                data-whatever="your email"
+                onclick="setTitleText($(this));"
+                ><i class="fas fa-envelope-open-text fa-fw animated"></i>Contact</a
+              >
+            </div>
+          </div>
+
+          <div class="dark-mode-toggle text-center w-100 ">
+            <hr />
+            <h6 class="toggle-name mb-3 mt-3">
+              <i class="fas fa-adjust fa-w-16 mr-1"></i>
+              Dark Mode
+            </h6>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1" />
+              <label class="custom-control-label" for="customSwitch1"></label>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="main-header py-5">
+        <div class="container text-center">
+          <h1 class="main-title mb-3">Resume</h1>
+          <button type="button" class="btn btn-success" onclick="getResume()">Download resume</button>
+        </div>
+      </section>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="resume" role="tabpanel">
+          <section class="main-body py-3">
+            <div class="container px-1 px-lg-2">
+              <article class="container-article mx-auto p-5 mb-5 my-5 shadow-lg" id="resume-pdf">
+                <div id="myresume">
+                  <div class="row container-header">
+                    <div class="col-3 resume-header-left pt-5 pl-5">
+                      <div class="border-image pl-4" data-html2canvas-ignore="true">
+                        <label for="resume-image">
+                          <img
+                            src="https://via.placeholder.com/200"
+                            class="resume-image rounded-circle"
+                            style="width: 224px; height: 224px;"
+                            alt="image"
+                          />
+                        </label>
+                        <input
+                          type="file"
+                          id="resume-image"
+                          accept="image/png, image/jpeg"
+                          onchange="uploadResumeImage()"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-9 resume-header-right pl-5">
+                      <h1 class="resume-title">Anas KAAOUACHI</h1>
+                      <span class="resume-subtitle">FullStack Web Developer</span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-3 resume-body-left">
+                      <div class="resume-profile">
+                        <h1 class="mb-2">Profile</h1>
+                        <p>
+                          Highly motivated and always looking to learn. I'm looking for an environment where I can
+                          highlight what I've learned and, vice versa, acquire the experience I lack.
+                        </p>
+                      </div>
+
+                      <div class="resume-infos">
+                        <h1 class="mb-3">Infos</h1>
+                        <ul class="list-unstyled text-justify pt-0">
+                          <li class="mb-2">
+                            <i class="fas fa-globe fa-w-14 fa-fw fa-lg mr-2 animated"></i>
+                            <a class="text-decoration-none" href="https://www.google.com" target="_blank"
+                              >www.mywebsite.com</a
+                            >
+                          </li>
+                          <li class="mb-2"><i class="fas fa-map-marker-alt fa-w-14 fa-fw fa-lg mr-2"></i>Liege</li>
+                          <li class="mb-2">
+                            <i class="fas fa-mobile-alt fa-w-14 fa-fw fa-lg mr-2 animated"></i>
+                            <a class="text-decoration-none" href="tel:#">01.23.45.67.89</a>
+                          </li>
+                          <li class="mb-0">
+                            <i class="fas fa-envelope fa-w-14 fa-fw fa-lg mr-2 animated"></i>
+                            <a class="text-decoration-none" href="mailto:#">mymail@gmail.com</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="resume-language">
+                        <h1 class="mb-2">Langues</h1>
+                        <ul class="list-unstyled text-justify">
+                          <li><span class="font-weight-bolder mr-1">French</span> (Native)</li>
+                          <li><span class="font-weight-bolder">English</span> (Professional)</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-9 resume-body-right py-lg-4 px-1 px-lg-2">
+                      <div class="resume-formation mb-3 mb-lg-5">
+                        <h1 class="formation-title mb-3 mb-sm-1">Formation</h1>
+                        <hr />
+                        <ul class="list-unstyled">
+                          <li>
+                            <div class="font-weight-bold">
+                              Artificial Intelligence and Machine Learning E-Degree
+                            </div>
+
+                            <div class="formation-infos my-auto">
+                              Eduonix Learning Solutions | 2019-2020
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="font-weight-bold">DevOps E-degree</div>
+
+                            <div class="formation-infos my-auto">
+                              Eduonix Learning Solutions | 2019-2020
+                            </div>
+                          </li>
+                          <li>
+                            <div class="font-weight-bold">MERN Stack Developer E-Degree Program</div>
+
+                            <div class="formation-infos my-auto">
+                              Eduonix Learning Solutions | 2019-2020
+                            </div>
+                          </li>
+                          <li>
+                            <div class="font-weight-bold">FullStack JavaScript Developer E-Degree</div>
+
+                            <div class="formation-infos my-auto">
+                              Eduonix Learning Solutions | 2019-2020
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="resume-project mb-4">
+                        <h1 class="formation-title mb-2 mb-sm-1">Projects</h1>
+                        <hr />
+                        <ul class="list-unstyled">
+                          <li>
+                            <div class="font-weight-bold">
+                              Resume website
+                            </div>
+                            <div class="formation-infos my-auto pr-3">
+                              <a href="#" target="_blank">Link</a> | <a href="#" target="_blank">Source</a>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="font-weight-bold">
+                              Audio player
+                            </div>
+                            <div class="formation-infos my-auto pr-3">
+                              <a href="http://playeraudio.epizy.com/" target="_blank">Link</a> |
+                              <a href="#" target="_blank">Source</a>
+                            </div>
+                          </li>
+
+                          <li>
+                            <div class="font-weight-bold">
+                              Sudoku
+                            </div>
+                            <div class="formation-infos my-auto pr-3">
+                              <a href="#" target="_blank">Link</a> | <a href="#" target="_blank">Source</a>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="resume-skills">
+                        <h1 class="formation-title mb-2 mb-sm-1">Skills</h1>
+                        <hr />
+                        <ul class="list-unstyled">
+                          <div class="font-weight-bold">
+                            <li class="mr-2">
+                              Front-End : <span class="font-weight-normal">HTML5 / CSS (Css3/Sass) / Javascript</span>
+                            </li>
+                          </div>
+                          <div class="font-weight-bold">
+                            <li>Back-End : <span class="font-weight-normal">Python, Node JS</span></li>
+                          </div>
+                          <div class="font-weight-bold">
+                            <li>Frameworks : <span class="font-weight-normal">Django, Bootstrap</span></li>
+                          </div>
+                          <div class="font-weight-bold">
+                            <li>Database : <span class="font-weight-normal">Sql, Oracle</span></li>
+                          </div>
+                          <div class="font-weight-bold">
+                            <li>Version Control : <span class="font-weight-normal">Git / Github</span></li>
+                          </div>
+
+                          <div class="font-weight-bold">
+                            <li>Others : <span class="font-weight-normal">Java, Spring, Hibernate, JSP</span></li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+        <div class="tab-pane" id="portfolio" role="tabpanel">
+          <section class="portfolio-body mt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-10 col-md-12 col-lg-10 col-xl-12">
+                  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleFade" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleFade" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleFade" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img
+                          src="http://hdwpro.com/wp-content/uploads/2017/03/Top-Computer-Wallpaper.jpg"
+                          class="d-block"
+                          alt="..."
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Resume Website</h5>
+                          <p>I build a resume website / portfolio</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="https://wallpapercave.com/wp/PVGc1zA.jpg" class="d-block" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Audio Player</h5>
+                          <p>I build an audio player</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img
+                          src="https://hdwallpapers.imgix.net/freestockphotos-36301554471538ozf1euupoj.jpg?auto=compress&cs=tinysrgb&dpr=1"
+                          class="d-block"
+                          alt="..."
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Sudoku</h5>
+                          <p>My sudoku</p>
+                        </div>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="tab-pane py-lg-1" id="projects" role="tabpanel" data-spy="scroll" data-target="#navbar_project">
+          <nav id="navbar_project" class="navbar justify-content-center mb-5">
+            <ul class="nav breadcrumb nav-pills pl-3">
+              <li class="breadcrumb-item">
+                <a href="#first_project" class="fp link-active">Audio Player</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#second_project" class="fp">Resume Website</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#third_project" class="fp">Third Project</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#fourth_project" class="fp">Fourth Project</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="icon-scroll"></div>
+
+          <section class="horizantal-scroll-wrapper">
+            <div class="row justify-content-center my-5 projects" id="first_project">
+              <div class="col-3 col-xl-5 left-column">
+                <a href="http://playeraudio.epizy.com/" target="_blank"
+                  ><img class="animated-image-visible" src="src/img/project_audio.PNG" alt=""
+                /></a>
+
+                <div class="wrapper-img">
+                  <p class="px-3 py-3">HTML 5, CSS, Javascript</p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-xl-4">
+                <div class="blank-space"></div>
+                <div class="wrapper-text-one animated-title-visible">
+                  <p class="px-3 py-3">Audio Player</p>
+                </div>
+                <p class="project-paragraph-one animated-paragraph-visible">
+                  My project Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iste nam aperiam quisquam
+                  enim tenetur ex mollitia ad voluptates nihil?
+                </p>
+              </div>
+            </div>
+
+            <div class="row justify-content-center my-5 projects" id="second_project">
+              <div class="col-3 col-xl-5">
+                <div class="blank-space"></div>
+                <div class="wrapper-text-two animated-title-visible">
+                  <p class="px-3 py-3">Resume Website</p>
+                </div>
+                <p class="project-paragraph-two animated-paragraph-visible">
+                  My project Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iste nam aperiam quisquam
+                  enim tenetur ex mollitia ad voluptates nihil?
+                </p>
+              </div>
+              <div class="col-lg-3 col-xl-4 right-column">
+                <a href="https://placeholder.com"
+                  ><img class="animated-image-visible" src="src/img/project_resume.PNG" alt=""
+                /></a>
+
+                <div class="wrapper-img">
+                  <p class="px-3 py-3">HTML 5, SCSS, Javascript, Bootstrap</p>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center my-5 projects" id="third_project">
+              <div class="col-3 col-xl-5 left-column">
+                <a href="https://placeholder.com"
+                  ><img class="animated-image-visible" src="https://via.placeholder.com/501x431" alt=""
+                /></a>
+
+                <div class="wrapper-img">
+                  <p class="px-3 py-3">HTML 5, SCSS, Javascript, Bootstrap</p>
+                </div>
+              </div>
+              <div class="col-3 col-xl-4">
+                <div class="blank-space"></div>
+                <div class="wrapper-text-one animated-title-visible">
+                  <p class="px-3 py-3">Third Project</p>
+                </div>
+                <p class="project-paragraph-one animated-paragraph-visible">
+                  My project Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iste nam aperiam quisquam
+                  enim tenetur ex mollitia ad voluptates nihil?
+                </p>
+              </div>
+            </div>
+
+            <div class="row justify-content-center my-5 projects" id="fourth_project">
+              <div class="col-3 col-xl-4">
+                <div class="blank-space"></div>
+                <div class="wrapper-text-two animated-title-visible">
+                  <p class="px-3 py-3">Fourth Project</p>
+                </div>
+                <p class="project-paragraph-two animated-paragraph-visible">
+                  My project Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iste nam aperiam quisquam
+                  enim tenetur ex mollitia ad voluptates nihil?
+                </p>
+              </div>
+              <div class="col-3 col-xl-5 right-column">
+                <a href="https://placeholder.com"
+                  ><img class="animated-image-visible" src="https://via.placeholder.com/501x431" alt=""
+                /></a>
+
+                <div class="wrapper-img">
+                  <p class="px-3 py-3">HTML 5, SCSS, Javascript, Bootstrap</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group" id="form-email">
+                  <label for="sender-email" class="col-form-label">E-mail:</label>
+                  <input type="text" class="form-control" id="sender-email" />
+                </div>
+                <div class="form-group" id="form-message">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="sendMessage()">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://kit.fontawesome.com/f9828f84e0.js" crossorigin="anonymous"></script>
+    <script src="src/js/html2canvas.min.js"></script>
+    <script src="src/js/jspdf.min.js"></script>
+    <script src="js/scripts.min.js" charset="utf-8"></script>
+    <script src="src/js/darkmode.js" charset="utf-8"></script>
+  </body>
+</html>

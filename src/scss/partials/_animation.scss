@@ -1,0 +1,345 @@
+@keyframes animresume {
+  0% {
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    transform: rotate(12deg);
+  }
+
+  10% {
+    transform: rotate(24deg);
+  }
+
+  18% {
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    transform: rotate(24deg);
+  }
+
+  30% {
+    transform: rotate(24deg);
+  }
+
+  38% {
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    transform: rotate(24deg);
+  }
+
+  50% {
+    transform: rotate(24deg);
+  }
+
+  58% {
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    transform: rotate(24deg);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+}
+
+#list-resume-list:hover .fa-file-alt.animated {
+  animation: animresume 2.5s ease infinite;
+}
+
+@keyframes animportfolio {
+  0% {
+    transform: translate(0, -3px);
+  }
+
+  4% {
+    transform: translate(0, 3px);
+  }
+
+  8% {
+    transform: translate(0, -3px);
+  }
+
+  12% {
+    transform: translate(0, 3px);
+  }
+
+  16% {
+    transform: translate(0, -3px);
+  }
+
+  20% {
+    transform: translate(0, 3px);
+  }
+
+  22% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes wrench {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#list-portfolio-list:hover .fa-wrench.animated {
+  animation: wrench 0.5s ease infinite;
+}
+
+#list-projects-list:hover .fa-laptop-code.animated {
+  animation: animportfolio 2s ease infinite;
+}
+
+@keyframes animcontact {
+  0% {
+    transform: translate(-3px, 0);
+  }
+
+  4% {
+    transform: translate(3px, 0);
+  }
+
+  8% {
+    transform: translate(-3px, 0);
+  }
+
+  12% {
+    transform: translate(3px, 0);
+  }
+
+  16% {
+    transform: translate(-3px, 0);
+  }
+
+  20% {
+    transform: translate(3px, 0);
+  }
+
+  22% {
+    transform: translate(0, 0);
+  }
+}
+
+#list-contact-list:hover .fa-envelope-open-text.animated {
+  animation: animcontact 2s ease infinite;
+}
+
+.container-article:hover .resume-infos .fa-mobile-alt.animated {
+  animation: animcontact 3s ease 10;
+}
+
+.container-article:hover .resume-infos .fa-envelope.animated {
+  animation: animportfolio 2s ease 10;
+}
+
+@keyframes animheader {
+  0% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header {
+  animation: animheader 1.5s 1 0s ease;
+}
+
+@keyframes animmainheader {
+  0% {
+    transform: translatey(-300px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-header {
+  animation: animmainheader 1.5s 1 0s ease;
+}
+
+@keyframes animRhl {
+  0% {
+    transform: translateY(-500px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(-65px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateY(-28px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateY(-8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+.resume-header-left {
+  animation: animRbl 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.resume-header-left .border-image {
+  animation: animRhl 1.1s both;
+}
+
+@keyframes animRhr {
+  0% {
+    -webkit-transform: rotateX(70deg);
+    transform: rotateX(70deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+.resume-header-right {
+  animation: animRhr 1.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes animRbl {
+  0% {
+    transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.resume-body-left {
+  animation: animRbl 2.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes animRdr {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.resume-body-right {
+  animation: animRdr 2s 1 0s linear;
+}
+
+@keyframes animWebIcon {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.main-body .container:hover .fa-globe.animated {
+  animation: animWebIcon 1.5s ease 10 both;
+}
+
+#portfolio {
+  animation: animRdr 1s 1 0s linear;
+}
+
+#projects .portfolio-body {
+  animation: animRdr 1s 1 0s linear;
+}
+
+@-webkit-keyframes animTest {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animTest {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}

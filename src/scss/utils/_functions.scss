@@ -1,0 +1,21 @@
+@function em($px) {
+  @return ($px/$basepx);
+}
+
+// @mixin toggle-style {
+//   outline: 0;
+//   display: block;
+//   width: 70px;
+//   height: 30px;
+//   position: relative;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   padding: 2px;
+//   -webkit-transition: all 0.2s ease-in-out;
+//   transition: all 0.2s ease-in-out;
+//   border: 3px solid rgba(255, 255, 255, 0.4);
+//   border-radius: 16px;
+// }
